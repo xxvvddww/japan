@@ -1,0 +1,75 @@
+[
+  {
+    "value": "Restaurant",
+    "label": "Restaurant",
+    "icon" : "/static/Images/images/red.png",
+    "initiallySelected": true
+  },
+  {
+    "value": "Bar",
+    "label": "Bar",
+    "icon" : "/static/Images/images/blue.png",
+    "initiallySelected": true
+  },
+  {
+    "value": "Photo Location",
+    "label": "Photo Location",
+    "icon" : "/static/Images/images/green.png",
+    "initiallySelected": true
+  },
+  {
+    "value": "Street Art",
+    "label": "Street Art",
+    "icon" : "/static/Images/images/pink.png",
+    "initiallySelected": true
+  },
+  {
+    "value": "Vending Machine",
+    "label": "Vending Machine",
+    "icon" : "/static/Images/images/purple.png",
+    "initiallySelected": true
+  },
+    {
+    "value": "Coffee Shop",
+    "label": "Coffee Shop",
+    "icon" : "/static/Images/images/yellow.png",
+    "initiallySelected": true
+  },
+    {
+    "label": "Clothing Store",
+    "icon" : "/static/Images/images/lightblue.png",
+    "value": "Clothing Store",
+    "initiallySelected": true
+  },
+    {
+    "value": "Manhole Cover Art",
+    "label": "Manhole Cover Art",
+    "icon" : "/static/Images/images/black.png",
+    "initiallySelected": true
+  },
+    {
+    "value": "Lockers",
+    "label": "Lockers",
+    "icon" : "/static/Images/images/white.png",
+    "initiallySelected": true
+  },
+    {
+    "value": "Waterfall",
+    "label": "Waterfall",
+    "icon" : "/static/Images/images/white.png",
+    "initiallySelected": true
+  },
+    {
+    "value": "Temples",
+    "label": "Temples",
+    "icon" : "/static/Images/images/white.png",
+    "initiallySelected": true
+  },
+    {
+    "value": "Garden",
+    "label": "Garden",
+    "icon" : "/static/Images/images/white.png",
+    "initiallySelected": true
+  }                 
+
+]

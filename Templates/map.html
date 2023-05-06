@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+  <meta charset="utf-8">
+  <title>Japan Map</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/leaflet.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.5">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Add this line -->
+<link rel="icon" href="/static/Images/images/logo.png" type="image/png">
+  <link rel="manifest" href="/static/json/manifest.json">
+  <script src="{{ url_for('static', filename='js/leaflet.js') }}"></script>
+
+</head>
+<body>
+  <div id="map"></div>
+
+<button id="switch-map-tiles-button"></button>
+
+<button id="filter-poi-button"></button>
+
+<button id="add-poi-button" onclick="enableAddPOI()">
+  <img src="/static/Images/images/Add.png" alt="Add" />
+</button>
+
+
+  <form id="poi-form"  onsubmit="event.preventDefault(); submitPOI();">  
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" required>
+
+    <label for="description">Description:</label>
+    <input type="text" id="description" required>
+
+    <label for="poi-type">POI Type:</label>
+
+
+<select id="poi-type">
+  <option value="" disabled selected>Select a POI type</option>
+</select>
+
+
+    <br>
+    <button type="submit">Submit</button>
+    <button type="button" onclick="cancelPOI()">Cancel</button>
+  </form>
+
+
+  <div id="confirm-coordinates">
+    <span>Correct Location?</span>
+    <button id="yes-button" type="button">Yes</button>
+    <button id="no-button" type="button">No</button>
+  </div>
+
+
+
+<div id="filter-options"> </div>
+  <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
