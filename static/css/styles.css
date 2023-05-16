@@ -53,7 +53,7 @@ html, body {
      font-size: calc(0.8em + 1vw);
      display: flex;
      justify-content: center;
-     background-image: url('/static/Images/images/filter.png');
+     background-image: url('https://japanmap.s3.ap-southeast-2.amazonaws.com/Map+Buttons/Filter.png');
      background-repeat: no-repeat;
      background-position: center;
      align-items: center;
@@ -217,7 +217,7 @@ html, body {
      font-size: calc(0.8em + 1vw);
      display: flex;
      justify-content: center;
-     background-image: url('/static/Images/images/maplayers.png');
+     background-image: url('https://japanmap.s3.ap-southeast-2.amazonaws.com/Map+Buttons/maplayers.png');
      background-repeat: no-repeat;
      background-position: center;
      align-items: center;

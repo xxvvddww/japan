@@ -37,11 +37,10 @@ mymap.on('mousemove', function(e) {
 
 
 var customIcon = L.icon({
-  iconUrl: '/static/Images/images/marker-icon.png',
-  iconSize: [25, 41],
+  iconUrl: 'https://japanmap.s3.ap-southeast-2.amazonaws.com/POI+Icons/Green.png',
+  iconSize: [25, 25],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
-  shadowUrl: '/static/Images/images/marker-shadow.png',
   shadowSize: [41, 41]
 });
 var marker = null;
@@ -75,7 +74,6 @@ function addMarker(latlng, poiType) {
         iconSize: [30, 30],
         iconAnchor: [12, 41],
         popupAnchor: [1, -34],
-        shadowUrl: '/static/Images/images/marker-shadow.png',
         shadowSize: [41, 41]
       });
       if (marker != null) {
