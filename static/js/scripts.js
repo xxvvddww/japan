@@ -35,6 +35,31 @@ mymap.on('mousemove', function(e) {
 
 
 
+if (navigator.geolocation) {
+  var userMarker;
+
+  navigator.geolocation.watchPosition(function(position) {
+    var latlng = L.latLng(position.coords.latitude, position.coords.longitude);
+
+    // If the userMarker has not been created, create it
+    if (!userMarker) {
+      userMarker = L.marker(latlng, {icon: customIcon}).addTo(mymap);
+    } else { // If it has already been created, update its position
+      userMarker.setLatLng(latlng);
+    }
+
+    mymap.setView(latlng, 13);
+  }, function(error) {
+    console.error('Error in getting position', error);
+  }, {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+  });
+} else {
+  alert("Geolocation is not supported by this browser.");
+}
+
 
 var customIcon = L.icon({
   iconUrl: 'https://japanmap.s3.ap-southeast-2.amazonaws.com/POI+Icons/Green.png',
@@ -249,12 +274,14 @@ function submitPOI() {
   var description = document.getElementById('description').value;
   var lat = marker.getLatLng().lat;
   var lng = marker.getLatLng().lng;
-  var poiType = document.getElementById('poi-type').options[document.getElementById('poi-type').selectedIndex].text;
+  var poiType = document.getElementById('poi-type').options[document.getElementById('poi-type').selectedIndex].text.trim();
 
-  if (poiType === '') {
+  // Check if the selected POI type is the default option
+  if (poiType === 'Select a POI type') {
     alert('Error: Please select a valid POI type.');
     return;
   }
+
   var addPoiButton = document.getElementById('add-poi-button');
   addPoiButton.classList.remove('enabled');
   addPoiButton.classList.add('disabled');
@@ -284,6 +311,9 @@ function submitPOI() {
       cancelPOI();
       document.body.classList.remove('selecting-coordinates');
       document.body.classList.add('poi-submitted'); // Add this line to disable adding new POIs
+
+      // Refresh the page
+      location.reload();
     } else {
       alert('Error: Could not add POI.');
     }
@@ -299,6 +329,8 @@ function submitPOI() {
     addPoiButton.onclick = showForm;
   });
 }
+
+
 
 function cancelPOI() {
   document.getElementById('poi-form').style.display = 'none';

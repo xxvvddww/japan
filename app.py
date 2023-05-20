@@ -42,16 +42,18 @@ def add_poi():
     lat = data.get('lat')
     lng = data.get('lng')
     POItype = data.get('POItype')
+    ip_address = request.remote_addr  # Get the IP address of the client
 
     try:
         with conn.cursor() as cursor:
-            cursor.execute("INSERT INTO pois (name, description, lat, lng, POItype) VALUES (%s, %s, %s, %s, %s)",
-                           (name, description, lat, lng, POItype))
+            cursor.execute("INSERT INTO pois (name, description, lat, lng, POItype, ip_address) VALUES (%s, %s, %s, %s, %s, %s)",
+                           (name, description, lat, lng, POItype, ip_address))  # Add the IP address to the INSERT statement
             conn.commit()
         return jsonify({'success': True})
     except Exception as e:
         print(e)
         return jsonify({'success': False})
+
 
 @app.route('/get_poi_types', methods=['GET'])
 def get_poi_types():
